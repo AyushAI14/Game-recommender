@@ -43,10 +43,14 @@
         <div class="card">
             <img src="{{ image[i] }}" alt="">
             <h3 class="long-text" >{{ title[i] }}</h3>
-            <p class="long-text, rel">Developer : {{ developer[i] }}</p>
+            <p class="dot , rel">Developer : {{ developer[i] }}</p>
             <p class="long-text , rel">Genre : {{ genre[i] }}</p>
             <p class="long-text ,rel">Platform : {{ platform[i] }}</p>
             <p class="long-text , rel">Release date : {{ release_date[i] }}</p>
+            <div class="btn">
+                <button class="pad"><a href="{{ game_url[i] }}" target="_blank" style="text-decoration: none; color: rgb(91, 31, 148);">Game</a></button>
+                <button class="pad"><a href="{{ freetogame_profile_url[i] }}" target="_blank" style="text-decoration: none; color: rgb(91, 31, 148)">Profile</a></button>
+            </div>
         </div>
         {% endfor %}
 

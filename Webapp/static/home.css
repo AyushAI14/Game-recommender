@@ -102,23 +102,31 @@ justify-content: center;
 }
 
 div.card {
-    width: 250px;
-    margin:5px 5px 5px 5px;
+    width: 15vw;
+    margin: 5px 5px 5px 5px;
     padding: 30px 30px 30px 30px;
     border: 1px solid gray;
     border-radius: 12px;
     box-sizing: border-box;
+    height: 50vh;
 }
 
 div.card img {
-    width: 130px;
+    width: 232px;
     border-radius: 12px;
-    margin-left:25px ;
-}
+    /* margin-left: 25px; */
+    height: 140px;
+  }
+
 .long-text {
     overflow-wrap: break-word; /* Wrap long words */
     white-space: normal;
   }
+.dot{
+    overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
   
 
 .containerContactMe7{
@@ -146,4 +154,17 @@ i{
 }
 .rel{
     font-size: .9rem;
+}
+
+div.btn{
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+.pad{
+    padding: 2px 12px 4px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4f0;
+
 }
