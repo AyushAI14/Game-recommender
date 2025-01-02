@@ -23,9 +23,9 @@ def home():
                            freetogame_profile_url = list(homedf["freetogame_profile_url"].values),
                            )
 
-app.route('/genre')
+@app.route('/genre')
 def genre():
     pass
 
 if __name__ == "__main__":
-     app.run(debug=True, use_reloader=False)
+    app.run(host='0.0.0.0', debug=True)

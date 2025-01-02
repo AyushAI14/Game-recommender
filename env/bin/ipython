@@ -1,4 +1,4 @@
-#!/home/ayush/Documents/AI/Machine_Learning/Projects/Game-recommender/env/bin/python
+#!/home/ayush/Documents/AI/Machine_Learning/Projects/Game-recommender/env/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
