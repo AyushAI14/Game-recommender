@@ -8,6 +8,14 @@ with open('model/homedf.pkl', 'rb') as file:
 with open('model/Maindf.pkl', 'rb') as file:
     Maindf = pickle.load(file)
 
+
+def genreRecommender(genre):
+    if genre in Maindf['genre'].values:
+        return Maindf[Maindf['genre'] == genre]
+    else:
+        return "no genre found"
+
+
 @app.route('/')
 def home():
     return render_template("home.html",
@@ -23,9 +31,25 @@ def home():
                            freetogame_profile_url = list(homedf["freetogame_profile_url"].values),
                            )
 
-@app.route('/genre')
+@app.route("/recommend")
+def recommend():
+    return render_template("recommend.html")
+
+@app.route("/UserRecommend", methods=['POST'])
 def genre():
+    user_input_genre = request.form.get('UserinputGenre')
+    filterdata = genreRecommender(user_input_genre)
+    
+    if filterdata.empty:  # Check for an empty DataFrame
+        games = []
+    else:
+        games = filterdata.to_dict(orient="records")
+
+    return render_template('recommend.html', games=games, user_input_genre=user_input_genre)
+@app.route("/UserRecommend", methods=['POST'])
+def title():
     pass
+    
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
