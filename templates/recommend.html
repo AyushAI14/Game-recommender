@@ -13,8 +13,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='recommend.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+   
+    <link rel="stylesheet" href="/static/recommend.css">
+    <link rel="stylesheet" href="/static/home.css">
+
     <title>Recommendation system</title>
 </head>
 
@@ -38,9 +40,9 @@
     <h1 class="hed">Recommend Some Games</h1>
     <hr style="width: 70%;">
     <div class="cont">
-        <form action="/UserRecommend" method="post">
-            <input name="" class="inputText" type="text" placeholder="Enter Book Name">
-            <select name="UserinputGenre" id="">
+        <form action="/UserRecommend" method="POST">
+            <input name="user_input_title" class="inputText" type="text" placeholder="Enter the game name">
+            <!-- <select name="UserinputGenre" id="">
                 <option value="" selected >Genre</option>
                 <option value="MMORPG">MMORPG</option>
                 <option value="Shooter">Shooter</option>
@@ -60,10 +62,10 @@
                 <option value="MMO">MMO</option>
                 <option value="Social">Social</option>
                 <option value="Fantasy">Fantasy</option>
-            </select>
+            </select> -->
             <input class="inputBtn" type="submit" value="submit">
         </form>
-        <h1 style="margin-left: 150px;">{{ user_input_genre }} : </h1> <br>
+        <h1 style="margin-left: 150px;">Games like : {{ user_input_title }} </h1> <br>
         <div class="co">
             {% if games %}
                 {% for game in games %}
